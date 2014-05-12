@@ -1,3 +1,6 @@
 [submodule "third_party/typescript"]
 	path = third_party/typescript
 	url = https://git01.codeplex.com/typescript
+[submodule "third_party/codemirror"]
+	path = third_party/codemirror
+	url = https://github.com/marijnh/CodeMirror.git

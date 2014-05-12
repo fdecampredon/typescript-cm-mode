@@ -1,0 +1,65 @@
+<!doctype html>
+
+<title>CodeMirror: JavaScript mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../third_party/codemirror/lib/codemirror.css">
+<script src="../third_party/codemirror/lib/codemirror.js"></script>
+<script src="../lib/typescript.js"></script>
+<style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+
+
+<article>
+<h2>TypeScript mode</h2>
+
+
+<div><textarea id="code" name="code">
+// Demo code (the actual new parser character stream implementation)
+class Greeter {
+    greeting: string;
+    constructor(message: string) {
+        this.greeting = message;
+    }
+    greet() {
+        return "Hello, " + this.greeting;
+    }
+}
+
+var greeter = new Greeter("world");
+
+var button = document.createElement('button');
+button.textContent = "Say Hello";
+button.onclick = function() {
+    alert(greeter.greet());
+}
+
+document.body.appendChild(button);
+
+</textarea></div>
+
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true
+      });
+    </script>
+
+    <p>
+      JavaScript mode supports several configuration options:
+      <ul>
+        <li><code>json</code> which will set the mode to expect JSON
+        data rather than a JavaScript program.</li>
+        <li><code>jsonld</code> which will set the mode to expect
+        <a href="http://json-ld.org">JSON-LD</a> linked data rather
+        than a JavaScript program (<a href="json-ld.html">demo</a>).</li>
+        <li><code>typescript</code> which will activate additional
+        syntax highlighting and some other things for TypeScript code
+        (<a href="typescript.html">demo</a>).</li>
+        <li><code>statementIndent</code> which (given a number) will
+        determine the amount of indentation to use for statements
+        continued on a new line.</li>
+      </ul>
+    </p>
+
+    <p><strong>MIME types defined:</strong> <code>text/javascript</code>, <code>application/json</code>, <code>application/ld+json</code>, <code>text/typescript</code>, <code>application/typescript</code>.</p>
+  </article>
